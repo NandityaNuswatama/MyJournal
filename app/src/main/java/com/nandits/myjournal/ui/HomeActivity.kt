@@ -21,6 +21,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         
         initRecyclerview(listJournal)
+        
+        binding.fabAdd.setOnClickListener {
+            val intent = Intent(this, AddJournalActivity::class.java)
+            startActivity(intent)
+        }
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

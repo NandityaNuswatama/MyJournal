@@ -10,8 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyJournal">
-        <activity android:name=".ui.HomeActivity"/>
-        <activity android:name=".ui.PinActivity"/>
+        <activity
+            android:name=".ui.AddJournalActivity"
+            android:exported="true" />
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.PinActivity" />
         <activity android:name=".ui.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
