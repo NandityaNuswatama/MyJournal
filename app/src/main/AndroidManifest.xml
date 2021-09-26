@@ -3,8 +3,7 @@
     package="com.nandits.myjournal">
 
     <application
-        android:name=".MyApp"
-        android:allowBackup="true"
+        android:name=".di.MyApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"

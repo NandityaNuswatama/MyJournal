@@ -3,7 +3,7 @@ package com.nandits.myjournal.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.nandits.myjournal.Journal
+import com.nandits.myjournal.source.db.Journal
 import com.nandits.myjournal.databinding.ItemJournalBinding
 
 class JournalAdapter: RecyclerView.Adapter<JournalAdapter.ViewHolder>() {

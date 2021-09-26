@@ -33,10 +33,21 @@
         android:id="@+id/tvContent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="8dp"
-        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit fringilla pharetra. Morbi non euismod felis. Fusce rutrum imperdiet maximus. "
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:layout_marginTop="10dp"
+        android:maxLines="3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit fringilla pharetra. Morbi non euismod felis. Fusce rutrum imperdiet maximus. " />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/layout/activity_add_journal.xml" value="0.22" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/layout/activity_home.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/layout/activity_pin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/layout/item_journal.xml" value="0.25" />
+        <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/menu/home_menu.xml" value="0.16296296296296298" />
         <entry key="..\:/Users/acer/AndroidStudioProjects/MyJournal/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
       </map>
     </option>

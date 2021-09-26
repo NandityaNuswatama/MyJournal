@@ -1,8 +1,10 @@
-package com.nandits.myjournal
+package com.nandits.myjournal.di
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
+@HiltAndroidApp
 class MyApp: Application() {
     override fun onCreate() {
         super.onCreate()
