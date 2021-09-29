@@ -24,14 +24,17 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         
-        viewModel.getJournal().observe(this, {
-            initRecyclerview(it)
-        })
-        
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this, AddJournalActivity::class.java)
             startActivity(intent)
         }
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        viewModel.getJournal().observe(this, {
+            initRecyclerview(it)
+        })
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
