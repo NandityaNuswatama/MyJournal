@@ -22,4 +22,10 @@ class HomeViewModel @Inject constructor(private val local: LocalDataSource): Vie
         }
         return liveData
     }
+    
+    fun deleteJournal(journal: Journal){
+        CoroutineScope(Dispatchers.IO).launch {
+            local.delete(journal)
+        }
+    }
 }

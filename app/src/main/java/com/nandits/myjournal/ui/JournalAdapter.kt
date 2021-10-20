@@ -8,6 +8,7 @@ import com.nandits.myjournal.databinding.ItemJournalBinding
 
 class JournalAdapter: RecyclerView.Adapter<JournalAdapter.ViewHolder>() {
     private val list = ArrayList<Journal>()
+    var onItemClick: ((Journal) -> Unit)?= null
     
     fun setData(input: List<Journal>){
         list.clear()
@@ -21,6 +22,10 @@ class JournalAdapter: RecyclerView.Adapter<JournalAdapter.ViewHolder>() {
                 tvTitle.text = item.title
                 tvDate.text = item.date
                 tvContent.text = item.content
+                
+                root.setOnClickListener {
+                    onItemClick?.invoke(item)
+                }
             }
         }
     }

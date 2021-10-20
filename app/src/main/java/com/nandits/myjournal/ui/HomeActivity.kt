@@ -8,8 +8,10 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.nandits.myjournal.R
 import com.nandits.myjournal.databinding.ActivityHomeBinding
+import com.nandits.myjournal.showToast
 import com.nandits.myjournal.source.db.Journal
 import com.nandits.myjournal.vm.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,9 +34,7 @@ class HomeActivity : AppCompatActivity() {
     
     override fun onResume() {
         super.onResume()
-        viewModel.getJournal().observe(this, {
-            initRecyclerview(it)
-        })
+        showData()
     }
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,7 +60,37 @@ class HomeActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@HomeActivity)
             adapter = journalAdapter
             journalAdapter.setData(list)
+            if (list.isEmpty()) showToast("Ayo Buat Jurnal Pertamamu!")
+            
+            journalAdapter.onItemClick = {
+                showDeleteDialog(it)
+            }
         }
+    }
+    
+    private fun showData(){
+        viewModel.getJournal().observe(this, {
+            initRecyclerview(it)
+        })
+    }
+    
+    private fun showDeleteDialog(journal: Journal){
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Peringatan")
+            .setMessage("Jurnal yang ada hapus tidak dapat dikembalikan")
+            .setPositiveButton("Hapus"){ _,_, ->
+                deleteJournal(journal)
+            }
+            .setNegativeButton("Batal"){ _,_ ->
+            
+            }
+            .show()
+    }
+    
+    private fun deleteJournal(journal: Journal){
+        viewModel.deleteJournal(journal)
+        showToast("Journal berhasil dihapus")
+        showData()
     }
     
 //    private val listJournal = listOf(
